@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Unity Projects\\ToyBox - GPT\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{85E396F4-41D0-57F2-07B1-E4A5A0D3E9C1}|Assembly-CSharp.csproj|d:\\unity projects\\toybox - gpt\\assets\\scripts\\toyboxitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85E396F4-41D0-57F2-07B1-E4A5A0D3E9C1}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\toyboxitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ToyBoxItem.cs",
+              "DocumentMoniker": "D:\\Unity Projects\\ToyBox - GPT\\Assets\\Scripts\\ToyBoxItem.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ToyBoxItem.cs",
+              "ToolTip": "D:\\Unity Projects\\ToyBox - GPT\\Assets\\Scripts\\ToyBoxItem.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ToyBoxItem.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAA3wCoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-25T17:49:30.271Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
