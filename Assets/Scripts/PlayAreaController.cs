@@ -1,19 +1,38 @@
 using UnityEngine;
 
+[RequireComponent(typeof(BoxCollider))]
 public class PlayAreaController : MonoBehaviour
 {
     [Header("Play Area Dimensions (World Units)")]
-    [Tooltip("Desired width of the play area.")]
     public float playAreaWidth = 16f;
-
-    [Tooltip("Desired height of the play area.")]
     public float playAreaHeight = 9f;
 
-    // Optional: Visualize the play area in Scene view.
-    private void OnDrawGizmos()
+    private BoxCollider boundaryCollider;
+
+    void Awake()
+    {
+        boundaryCollider = GetComponent<BoxCollider>();
+        UpdateBoundary();
+    }
+
+    void OnValidate()
+    {
+        if (boundaryCollider == null)
+            boundaryCollider = GetComponent<BoxCollider>();
+        UpdateBoundary();
+    }
+
+    void UpdateBoundary()
+    {
+        // The boundary is centered at (0,0) and its size equals the play area dimensions.
+        boundaryCollider.center = Vector3.zero;
+        boundaryCollider.size = new Vector3(playAreaWidth, playAreaHeight, 1f);
+    }
+
+    // Visualize the play area in Scene view
+    void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
-        Vector3 center = Vector3.zero;
-        Gizmos.DrawWireCube(center, new Vector3(playAreaWidth, playAreaHeight, 0));
+        Gizmos.DrawWireCube(transform.position, new Vector3(playAreaWidth, playAreaHeight, 0));
     }
 }

@@ -3,14 +3,15 @@ using UnityEngine;
 [RequireComponent(typeof(Camera))]
 public class CameraController : MonoBehaviour
 {
-    [Tooltip("Reference to the Play Area Controller.")]
-    public PlayAreaController playAreaController;
+    [Tooltip("Reference to the PlayAreaController.")]
+    public PlayAreaController playArea;
 
     private Camera cam;
 
     void Awake()
     {
         cam = GetComponent<Camera>();
+        UpdateCameraSize();
     }
 
     void Start()
@@ -18,19 +19,17 @@ public class CameraController : MonoBehaviour
         UpdateCameraSize();
     }
 
-    // Call this whenever you change the play area dimensions.
     public void UpdateCameraSize()
     {
-        if (playAreaController != null)
+        if (playArea != null && cam != null)
         {
-            // For an orthographic camera, size is half the vertical size.
-            cam.orthographicSize = playAreaController.playAreaHeight / 2f;
+            // Set the orthographic size so that the vertical view equals the play area height.
+            cam.orthographicSize = playArea.playAreaHeight / 2f;
         }
     }
 
 #if UNITY_EDITOR
-    // Update in editor when values change.
-    private void OnValidate()
+    void OnValidate()
     {
         if (cam == null)
             cam = GetComponent<Camera>();
