@@ -3,16 +3,8 @@
   "WorkspaceRootPath": "D:\\Unity Projects\\ToyBox - GPT\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{85E396F4-41D0-57F2-07B1-E4A5A0D3E9C1}|Assembly-CSharp.csproj|d:\\unity projects\\toybox - gpt\\assets\\scripts\\playareacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85E396F4-41D0-57F2-07B1-E4A5A0D3E9C1}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playareacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85E396F4-41D0-57F2-07B1-E4A5A0D3E9C1}|Assembly-CSharp.csproj|d:\\unity projects\\toybox - gpt\\assets\\scripts\\flingableball.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85E396F4-41D0-57F2-07B1-E4A5A0D3E9C1}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\flingableball.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85E396F4-41D0-57F2-07B1-E4A5A0D3E9C1}|Assembly-CSharp.csproj|D:\\Unity Projects\\ToyBox - GPT\\assets\\scripts\\draggablepanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85E396F4-41D0-57F2-07B1-E4A5A0D3E9C1}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\draggablepanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{85E396F4-41D0-57F2-07B1-E4A5A0D3E9C1}|Assembly-CSharp.csproj|d:\\unity projects\\toybox - gpt\\assets\\scripts\\playareawalls.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85E396F4-41D0-57F2-07B1-E4A5A0D3E9C1}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playareawalls.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,40 +19,15 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "PlayAreaController.cs",
-              "DocumentMoniker": "D:\\Unity Projects\\ToyBox - GPT\\Assets\\Scripts\\PlayAreaController.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\PlayAreaController.cs",
-              "ToolTip": "D:\\Unity Projects\\ToyBox - GPT\\Assets\\Scripts\\PlayAreaController.cs",
-              "RelativeToolTip": "Assets\\Scripts\\PlayAreaController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Title": "PlayAreaWalls.cs",
+              "DocumentMoniker": "D:\\Unity Projects\\ToyBox - GPT\\Assets\\Scripts\\PlayAreaWalls.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\PlayAreaWalls.cs",
+              "ToolTip": "D:\\Unity Projects\\ToyBox - GPT\\Assets\\Scripts\\PlayAreaWalls.cs",
+              "RelativeToolTip": "Assets\\Scripts\\PlayAreaWalls.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAkwD0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-26T16:51:10.768Z",
+              "WhenOpened": "2025-03-27T18:39:54.739Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FlingableBall.cs",
-              "DocumentMoniker": "D:\\Unity Projects\\ToyBox - GPT\\Assets\\Scripts\\FlingableBall.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\FlingableBall.cs",
-              "ToolTip": "D:\\Unity Projects\\ToyBox - GPT\\Assets\\Scripts\\FlingableBall.cs",
-              "RelativeToolTip": "Assets\\Scripts\\FlingableBall.cs",
-              "ViewState": "AgIAADQAAAAAAAAAAAAkwFQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-26T13:02:39.884Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DraggablePanel.cs",
-              "DocumentMoniker": "D:\\Unity Projects\\ToyBox - GPT\\Assets\\Scripts\\DraggablePanel.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\DraggablePanel.cs",
-              "ToolTip": "D:\\Unity Projects\\ToyBox - GPT\\Assets\\Scripts\\DraggablePanel.cs",
-              "RelativeToolTip": "Assets\\Scripts\\DraggablePanel.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAkwDwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-26T12:50:57.99Z"
             }
           ]
         }
