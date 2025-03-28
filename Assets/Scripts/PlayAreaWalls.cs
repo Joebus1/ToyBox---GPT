@@ -7,7 +7,6 @@ public class PlayAreaWalls : MonoBehaviour
     public float playAreaHeight = 9f;
 
     [Header("Wall Thickness")]
-    [Tooltip("How thick each wall should be in the X or Y dimension.")]
     public float wallThickness = 1f;
 
     [Header("Wall References")]
@@ -28,34 +27,28 @@ public class PlayAreaWalls : MonoBehaviour
 
     public void UpdateWalls()
     {
-        // Safety check
         if (!topWall || !bottomWall || !leftWall || !rightWall) return;
 
         float halfW = playAreaWidth * 0.5f;
         float halfH = playAreaHeight * 0.5f;
 
-        // Top wall: centered horizontally, top edge
-        topWall.localPosition = new Vector3(0f, +halfH, 0f);
-        topWall.localScale = new Vector3(playAreaWidth, wallThickness, 1f);
+        // Position & scale each wall so it frames the area
+        topWall.localPosition    = new Vector3(0f,   +halfH, 0f);
+        topWall.localScale      = new Vector3(playAreaWidth, wallThickness, 1f);
 
-        // Bottom wall: centered horizontally, bottom edge
-        bottomWall.localPosition = new Vector3(0f, -halfH, 0f);
-        bottomWall.localScale = new Vector3(playAreaWidth, wallThickness, 1f);
+        bottomWall.localPosition = new Vector3(0f,   -halfH, 0f);
+        bottomWall.localScale    = new Vector3(playAreaWidth, wallThickness, 1f);
 
-        // Left wall: left edge, covers full height
-        leftWall.localPosition = new Vector3(-halfW, 0f, 0f);
-        leftWall.localScale = new Vector3(wallThickness, playAreaHeight, 1f);
+        leftWall.localPosition   = new Vector3(-halfW, 0f, 0f);
+        leftWall.localScale      = new Vector3(wallThickness, playAreaHeight, 1f);
 
-        // Right wall: right edge, covers full height
-        rightWall.localPosition = new Vector3(+halfW, 0f, 0f);
-        rightWall.localScale = new Vector3(wallThickness, playAreaHeight, 1f);
+        rightWall.localPosition  = new Vector3(+halfW, 0f, 0f);
+        rightWall.localScale     = new Vector3(wallThickness, playAreaHeight, 1f);
     }
 
     private void OnDrawGizmos()
     {
-        // Draw a white wireframe for the play area
         Gizmos.color = Color.white;
-        Vector3 center = transform.position;
-        Gizmos.DrawWireCube(center, new Vector3(playAreaWidth, playAreaHeight, 0f));
+        Gizmos.DrawWireCube(transform.position, new Vector3(playAreaWidth, playAreaHeight, 0f));
     }
 }
