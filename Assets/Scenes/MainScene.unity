@@ -1264,6 +1264,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 7441440908871300343, guid: 1820c1f45719abf4bb157e0ef8a17a3c, type: 3}
   toyBoxPanel: {fileID: 1751389736}
+  uiCamera: {fileID: 330585545}
 --- !u!114 &1400887967
 MonoBehaviour:
   m_ObjectHideFlags: 0

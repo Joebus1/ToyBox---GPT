@@ -10,7 +10,6 @@ public class ClearAllToys : MonoBehaviour
             Destroy(toy.gameObject);
         }
 
-        Debug.Log("All toys cleared!");
-
+        Debug.Log("Cleared all toys: " + allToys.Length);
     }
 }

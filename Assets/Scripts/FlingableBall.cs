@@ -1,15 +1,19 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections.Generic;
 
 [RequireComponent(typeof(Rigidbody))]
-public class EnhancedFlingableBall : MonoBehaviour
+public class FlingableBall : MonoBehaviour
 {
     [Header("Fling Settings")]
-    [Tooltip("How much to scale mouse movement ? world velocity")]
+    [Tooltip("How much to scale mouse movement → fling velocity")]
     public float flingMultiplier = 1.5f;
 
-    [Tooltip("Number of samples to average for smooth velocity")]
+    [Tooltip("How many movement samples to average")]
     public int sampleCount = 5;
+
+    [Header("UI References")]
+    [SerializeField] private RectTransform toyBoxPanel;
+    [SerializeField] private Camera uiCamera;
 
     private Rigidbody rb;
     private bool isDragging;
@@ -20,20 +24,27 @@ public class EnhancedFlingableBall : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
+
+        // Auto-assign UI camera if not set
+        if (uiCamera == null)
+        {
+            Canvas canvas = Object.FindFirstObjectByType<Canvas>();
+            if (canvas != null)
+                uiCamera = canvas.worldCamera;
+        }
     }
 
     void OnMouseDown()
     {
         rb.isKinematic = true;
         isDragging = true;
-        posSamples.Clear();
-        timeSamples.Clear();
 
-        // Initial offset
         Vector3 worldPos = GetMouseWorldPosition();
         dragOffset = transform.position - worldPos;
 
-        // Seed sample queues
+        posSamples.Clear();
+        timeSamples.Clear();
+
         posSamples.Enqueue(worldPos);
         timeSamples.Enqueue(Time.time);
     }
@@ -45,11 +56,9 @@ public class EnhancedFlingableBall : MonoBehaviour
         Vector3 worldPos = GetMouseWorldPosition();
         transform.position = worldPos + dragOffset;
 
-        // Record sample
         posSamples.Enqueue(worldPos);
         timeSamples.Enqueue(Time.time);
 
-        // Maintain only last sampleCount samples
         if (posSamples.Count > sampleCount)
         {
             posSamples.Dequeue();
@@ -60,10 +69,27 @@ public class EnhancedFlingableBall : MonoBehaviour
     void OnMouseUp()
     {
         if (!isDragging) return;
+
         isDragging = false;
+
+        // Check if dropped inside ToyBoxPanel
+        if (toyBoxPanel != null && uiCamera != null)
+        {
+            Vector2 localPoint;
+            bool overToyBox = RectTransformUtility.ScreenPointToLocalPointInRectangle(
+                toyBoxPanel, Input.mousePosition, uiCamera, out localPoint
+            );
+
+            if (overToyBox && toyBoxPanel.rect.Contains(localPoint))
+            {
+                Debug.Log("Ball dropped into ToyBox. Destroying.");
+                Destroy(gameObject);
+                return;
+            }
+        }
+
         rb.isKinematic = false;
 
-        // Compute average velocity over samples
         if (posSamples.Count >= 2)
         {
             Vector3 firstPos = posSamples.Peek();
@@ -77,11 +103,10 @@ public class EnhancedFlingableBall : MonoBehaviour
             float dt = lastTime - firstTime;
             if (dt > 0f)
             {
-                Vector3 rawVel = (lastPos - firstPos) / dt;
-                Vector3 flingVel = rawVel * flingMultiplier;
-                flingVel.z = 0f; // keep 2D
-
-                rb.linearVelocity = flingVel;
+                Vector3 rawVelocity = (lastPos - firstPos) / dt;
+                Vector3 flingVelocity = rawVelocity * flingMultiplier;
+                flingVelocity.z = 0f;
+                rb.linearVelocity = flingVelocity;
             }
         }
 
@@ -91,8 +116,8 @@ public class EnhancedFlingableBall : MonoBehaviour
 
     private Vector3 GetMouseWorldPosition()
     {
-        Vector3 screen = Input.mousePosition;
-        screen.z = Camera.main.WorldToScreenPoint(transform.position).z;
-        return Camera.main.ScreenToWorldPoint(screen);
+        Vector3 screenPos = Input.mousePosition;
+        screenPos.z = uiCamera.WorldToScreenPoint(transform.position).z;
+        return uiCamera.ScreenToWorldPoint(screenPos);
     }
 }
