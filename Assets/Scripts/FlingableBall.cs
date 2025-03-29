@@ -18,14 +18,13 @@ public class FlingableBall : MonoBehaviour
     private Rigidbody rb;
     private bool isDragging;
     private Vector3 dragOffset;
-    private Queue<Vector3> posSamples = new Queue<Vector3>();
-    private Queue<float> timeSamples = new Queue<float>();
+    private Queue<Vector3> posSamples = new();
+    private Queue<float> timeSamples = new();
 
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
 
-        // Auto-assign UI camera if not set
         if (uiCamera == null)
         {
             Canvas canvas = Object.FindFirstObjectByType<Canvas>();
@@ -69,25 +68,23 @@ public class FlingableBall : MonoBehaviour
     void OnMouseUp()
     {
         if (!isDragging) return;
-
         isDragging = false;
 
-        // Check if dropped inside ToyBoxPanel
+        // Try to delete if dropped in ToyBoxPanel
         if (toyBoxPanel != null && uiCamera != null)
         {
-            Vector2 localPoint;
-            bool overToyBox = RectTransformUtility.ScreenPointToLocalPointInRectangle(
-                toyBoxPanel, Input.mousePosition, uiCamera, out localPoint
-            );
-
-            if (overToyBox && toyBoxPanel.rect.Contains(localPoint))
+            if (RectTransformUtility.ScreenPointToLocalPointInRectangle(toyBoxPanel, Input.mousePosition, uiCamera, out Vector2 localPoint))
             {
-                Debug.Log("Ball dropped into ToyBox. Destroying.");
-                Destroy(gameObject);
-                return;
+                if (toyBoxPanel.rect.Contains(localPoint))
+                {
+                    Debug.Log("Deleted: Ball dropped in ToyBoxPanel");
+                    Destroy(gameObject);
+                    return;
+                }
             }
         }
 
+        // Fling
         rb.isKinematic = false;
 
         if (posSamples.Count >= 2)
@@ -97,6 +94,7 @@ public class FlingableBall : MonoBehaviour
 
             Vector3 lastPos = default;
             float lastTime = default;
+
             foreach (var p in posSamples) lastPos = p;
             foreach (var t in timeSamples) lastTime = t;
 
