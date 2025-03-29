@@ -6,8 +6,12 @@ public class DeleteOnTrigger : MonoBehaviour
     {
         if (other.CompareTag("Toy"))
         {
-            Debug.Log("Toy entered delete zone — destroyed.");
-            Destroy(other.gameObject);
+            FlingableBall flingScript = other.GetComponent<FlingableBall>();
+            if (flingScript != null && flingScript.wasReleasedByPlayer)
+            {
+                Debug.Log("Ball entered DeleteZone and was released. Deleting...");
+                Destroy(other.gameObject);
+            }
         }
     }
 }

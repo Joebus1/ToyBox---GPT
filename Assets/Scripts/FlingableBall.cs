@@ -11,9 +11,7 @@ public class FlingableBall : MonoBehaviour
     [Tooltip("How many movement samples to average")]
     public int sampleCount = 5;
 
-    [Header("UI References")]
-    [SerializeField] private RectTransform toyBoxPanel;
-    [SerializeField] private Camera uiCamera;
+    [HideInInspector] public bool wasReleasedByPlayer = false;
 
     private Rigidbody rb;
     private bool isDragging;
@@ -24,19 +22,14 @@ public class FlingableBall : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
-
-        if (uiCamera == null)
-        {
-            Canvas canvas = Object.FindFirstObjectByType<Canvas>();
-            if (canvas != null)
-                uiCamera = canvas.worldCamera;
-        }
+        wasReleasedByPlayer = false; // ✅ Set this just to be safe
     }
 
     void OnMouseDown()
     {
         rb.isKinematic = true;
         isDragging = true;
+        wasReleasedByPlayer = false;
 
         Vector3 worldPos = GetMouseWorldPosition();
         dragOffset = transform.position - worldPos;
@@ -65,26 +58,13 @@ public class FlingableBall : MonoBehaviour
         }
     }
 
+    [System.Obsolete]
     void OnMouseUp()
     {
         if (!isDragging) return;
         isDragging = false;
+        wasReleasedByPlayer = true;
 
-        // Try to delete if dropped in ToyBoxPanel
-        if (toyBoxPanel != null && uiCamera != null)
-        {
-            if (RectTransformUtility.ScreenPointToLocalPointInRectangle(toyBoxPanel, Input.mousePosition, uiCamera, out Vector2 localPoint))
-            {
-                if (toyBoxPanel.rect.Contains(localPoint))
-                {
-                    Debug.Log("Deleted: Ball dropped in ToyBoxPanel");
-                    Destroy(gameObject);
-                    return;
-                }
-            }
-        }
-
-        // Fling
         rb.isKinematic = false;
 
         if (posSamples.Count >= 2)
@@ -104,7 +84,7 @@ public class FlingableBall : MonoBehaviour
                 Vector3 rawVelocity = (lastPos - firstPos) / dt;
                 Vector3 flingVelocity = rawVelocity * flingMultiplier;
                 flingVelocity.z = 0f;
-                rb.linearVelocity = flingVelocity;
+                rb.velocity = flingVelocity;
             }
         }
 
@@ -115,7 +95,7 @@ public class FlingableBall : MonoBehaviour
     private Vector3 GetMouseWorldPosition()
     {
         Vector3 screenPos = Input.mousePosition;
-        screenPos.z = uiCamera.WorldToScreenPoint(transform.position).z;
-        return uiCamera.ScreenToWorldPoint(screenPos);
+        screenPos.z = 10f; // Arbitrary Z distance from camera
+        return Camera.main.ScreenToWorldPoint(screenPos);
     }
 }
