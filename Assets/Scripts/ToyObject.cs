@@ -1,19 +1,38 @@
-using UnityEngine;
+﻿using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
-[RequireComponent(typeof(Collider))]
+[RequireComponent(typeof(Rigidbody), typeof(Collider))]
 public class ToyObject : MonoBehaviour
 {
-    public ToyProperties properties; // Reference your ScriptableObject here
+    public ToyProperties properties;
 
     void Awake()
     {
-        Rigidbody rb = GetComponent<Rigidbody>();
-        if (properties != null)
+        ApplyProperties();
+    }
+
+    void ApplyProperties()
+    {
+        if (properties == null) return;
+
+        // Set mass
+        var rb = GetComponent<Rigidbody>();
+        rb.mass = properties.mass;
+        rb.angularDamping = 0.05f;
+
+        // Create and apply dynamic physics material
+        var collider = GetComponent<Collider>();
+        if (collider != null)
         {
-            rb.mass = properties.mass;
-            // Assuming the collider already has a Physics Material,
-            // you could adjust bounciness/friction via the material settings.
+            var mat = new PhysicsMaterial
+            {
+                bounciness = properties.bounciness,
+                dynamicFriction = properties.friction,
+                staticFriction = properties.friction,
+                bounceCombine = PhysicsMaterialCombine.Multiply,
+                frictionCombine = PhysicsMaterialCombine.Average
+            };
+
+            collider.material = mat;
         }
     }
 }

@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 4065602428795925316}
   - component: {fileID: -3698820609316652303}
   - component: {fileID: -2920451003905169645}
-  - component: {fileID: -1220289212078133352}
   - component: {fileID: -5581631927600149647}
+  - component: {fileID: -1220289212078133352}
   m_Layer: 0
   m_Name: Soccer
   m_TagString: Toy
@@ -119,7 +119,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7074948992791993279}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 0.45
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -137,7 +137,20 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
+--- !u!114 &-5581631927600149647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7074948992791993279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d719ef965b1ddb41abe61f53a586a47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  properties: {fileID: 11400000, guid: bb3a21bc98667e74c8f41b40a859a13a, type: 2}
 --- !u!114 &-1220289212078133352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,16 +166,3 @@ MonoBehaviour:
   flingMultiplier: 1.5
   sampleCount: 5
   wasReleasedByPlayer: 0
---- !u!114 &-5581631927600149647
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7074948992791993279}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d719ef965b1ddb41abe61f53a586a47, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  properties: {fileID: 11400000, guid: bb3a21bc98667e74c8f41b40a859a13a, type: 2}
