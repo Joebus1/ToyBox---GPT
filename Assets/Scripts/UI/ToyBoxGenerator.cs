@@ -1,36 +1,13 @@
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using ToyDefinitions; // Ensure this matches your folder/namespace if used
 
-public class ToyBoxGenerator : MonoBehaviour
+[CreateAssetMenu(menuName = "Toy Box/Toy Database")]
+public class ToyDatabase : ScriptableObject
 {
-    public ToyDatabase database;
-    public GameObject buttonPrefab;
-    public Transform buttonContainer;
+    [SerializeField]
+    private List<ToyDefinition> toys = new List<ToyDefinition>();
 
-    void Start()
-    {
-        GenerateButtons();
-    }
-
-    void GenerateButtons()
-    {
-        foreach (Transform child in buttonContainer)
-        {
-            Destroy(child.gameObject); // Clear old
-        }
-
-        foreach (var toy in database.toys)
-        {
-            GameObject newBtn = Instantiate(buttonPrefab, buttonContainer);
-            newBtn.name = toy.displayName;
-
-            Image img = newBtn.GetComponent<Image>();
-            if (img != null && toy.icon != null)
-                img.sprite = toy.icon;
-
-            ToyBoxItem tbi = newBtn.GetComponent<ToyBoxItem>();
-            if (tbi != null)
-                tbi.prefab = toy.prefab;
-        }
-    }
+    // Public getter allows read-only access from other scripts
+    public List<ToyDefinition> Toys => toys;
 }

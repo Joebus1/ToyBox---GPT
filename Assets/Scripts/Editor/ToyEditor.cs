@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class ToyEditor : EditorWindow
 {
-    private ToyDatabase toyDatabase;
+    private ToyDatabase database;
+    private Vector2 scrollPos;
 
     [MenuItem("ToyBox/Toy Editor")]
     public static void ShowWindow()
@@ -11,38 +12,41 @@ public class ToyEditor : EditorWindow
         GetWindow<ToyEditor>("Toy Editor");
     }
 
+    private void OnEnable()
+    {
+        if (database == null)
+        {
+            // Auto-load from Resources folder, or drag manually if needed
+            database = Resources.Load<ToyDatabase>("ToyDatabase");
+        }
+    }
+
     private void OnGUI()
     {
-        GUILayout.Space(10);
-        toyDatabase = (ToyDatabase)EditorGUILayout.ObjectField("Toy Database", toyDatabase, typeof(ToyDatabase), false);
+        // Allow manual assignment in case Resources.Load fails
+        database = (ToyDatabase)EditorGUILayout.ObjectField("Toy Database", database, typeof(ToyDatabase), false);
 
-        if (toyDatabase == null)
+        if (database == null)
         {
-            EditorGUILayout.HelpBox("Please assign a ToyDatabase asset.", MessageType.Info);
+            EditorGUILayout.HelpBox("Assign a ToyDatabase asset.", MessageType.Warning);
             return;
         }
 
-        GUILayout.Space(10);
+        scrollPos = EditorGUILayout.BeginScrollView(scrollPos);  // << SCROLL BEGIN
 
-        foreach (var toy in toyDatabase.Toys)
+        foreach (var toy in database.Toys)
         {
             if (toy == null || toy.properties == null)
                 continue;
 
-            EditorGUILayout.BeginVertical("box");
-            EditorGUILayout.LabelField(toy.displayName, EditorStyles.boldLabel);
+            EditorGUILayout.Space(8);
+            EditorGUILayout.LabelField(toy.name, EditorStyles.boldLabel);
 
-            EditorGUI.BeginChangeCheck();
             toy.properties.mass = EditorGUILayout.FloatField("Mass", toy.properties.mass);
-            toy.properties.bounciness = EditorGUILayout.Slider("Bounciness", toy.properties.bounciness, 0f, 1f);
-            toy.properties.friction = EditorGUILayout.Slider("Friction", toy.properties.friction, 0f, 1f);
-            if (EditorGUI.EndChangeCheck())
-            {
-                EditorUtility.SetDirty(toy.properties);
-            }
-
-            EditorGUILayout.EndVertical();
-            GUILayout.Space(5);
+            toy.properties.bounciness = EditorGUILayout.FloatField("Bounciness", toy.properties.bounciness);
+            toy.properties.friction = EditorGUILayout.FloatField("Friction", toy.properties.friction);
         }
+
+        EditorGUILayout.EndScrollView();  // << SCROLL END
     }
 }

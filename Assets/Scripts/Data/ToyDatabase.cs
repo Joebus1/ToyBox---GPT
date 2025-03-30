@@ -1,15 +1,12 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "ToyDatabase", menuName = "ToyBox/Toy Database")]
+[CreateAssetMenu(menuName = "Toy Box/Toy Database")]
 public class ToyDatabase : ScriptableObject
 {
-    [SerializeField] private List<ToyDefinition> toys = new();
+    [SerializeField]
+    private List<ToyDefinition> toyList = new List<ToyDefinition>();
 
-    // Public property to access/edit the list in scripts or custom windows
-    public List<ToyDefinition> Toys
-    {
-        get => toys;
-        set => toys = value;
-    }
+    // Exposed as read-only for other scripts
+    public List<ToyDefinition> Toys => toyList;
 }

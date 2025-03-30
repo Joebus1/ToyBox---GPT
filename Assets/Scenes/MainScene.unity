@@ -549,7 +549,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8666b539de44cda4697b7b23711a11e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelToResize: {fileID: 1751389736}
+  targetPanel: {fileID: 1751389736}
   minWidth: 74
   minHeight: 100
 --- !u!114 &429484994
