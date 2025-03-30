@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c29efd5fb5f09ed4f88edaeaf739fd96, type: 3}
   m_Name: ToyDatabase
   m_EditorClassIdentifier: 
-  toys:
+  toyList:
   - {fileID: 11400000, guid: 70b5f65137195264eb5828420a9643d9, type: 2}
   - {fileID: 11400000, guid: 7591d6f4947f24649af5267d6418394a, type: 2}
   - {fileID: 11400000, guid: 6be75a1b92601cd40bed2245365fda32, type: 2}
