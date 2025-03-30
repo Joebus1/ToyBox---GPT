@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Toy", menuName = "ToyBox/Toy Definition")]
+[CreateAssetMenu(fileName = "NewToyDefinition", menuName = "ToyBox/Toy Definition")]
 public class ToyDefinition : ScriptableObject
 {
     public string displayName;
