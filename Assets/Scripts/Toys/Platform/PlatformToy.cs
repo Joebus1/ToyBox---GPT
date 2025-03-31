@@ -1,41 +1,24 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-[RequireComponent(typeof(Rigidbody2D))]
-public class PlatformToy : MonoBehaviour
+public class PlatformToy : MonoBehaviour, IPointerDownHandler, IDragHandler
 {
-    public Transform body;
-    private Vector3 offset;
-    private bool dragging = false;
-    private Camera cam;
+    public Transform platform; // Should be "Body"
+    public Transform pivot;    // Should be "Pivot"
 
-    void Awake()
+    public void OnPointerDown(PointerEventData eventData)
     {
-        cam = Camera.main;
+        // Nothing needed here yet
     }
 
-    void Update()
+    public void OnDrag(PointerEventData eventData)
     {
-        if (dragging)
-        {
-            Vector3 mouse = cam.ScreenToWorldPoint(Input.mousePosition);
-            mouse.z = transform.position.z;
-            transform.position = mouse + offset;
-        }
-    }
+        if (platform == null || pivot == null) return;
 
-    void OnMouseDown()
-    {
-        if (Input.GetMouseButton(0))
-        {
-            Vector3 mouse = cam.ScreenToWorldPoint(Input.mousePosition);
-            mouse.z = transform.position.z;
-            offset = transform.position - mouse;
-            dragging = true;
-        }
-    }
+        Vector2 mouseWorld = Camera.main.ScreenToWorldPoint(eventData.position);
+        Vector2 dir = mouseWorld - (Vector2)pivot.position;
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
 
-    void OnMouseUp()
-    {
-        dragging = false;
+        platform.rotation = Quaternion.Euler(0, 0, angle);
     }
 }

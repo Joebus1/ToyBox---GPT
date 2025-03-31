@@ -3,11 +3,15 @@
   "WorkspaceRootPath": "E:\\Unity Projects\\ToyBox---GPT\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{540199BD-2A47-7EB2-6DA8-7078DD35C198}|Assembly-CSharp.csproj|e:\\unity projects\\toybox---gpt\\assets\\scripts\\toys\\platformhandle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{540199BD-2A47-7EB2-6DA8-7078DD35C198}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\toys\\platformhandle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{540199BD-2A47-7EB2-6DA8-7078DD35C198}|Assembly-CSharp.csproj|e:\\unity projects\\toybox---gpt\\assets\\scripts\\toys\\platformtoy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{540199BD-2A47-7EB2-6DA8-7078DD35C198}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\toys\\platformtoy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{540199BD-2A47-7EB2-6DA8-7078DD35C198}|Assembly-CSharp.csproj|e:\\unity projects\\toybox---gpt\\assets\\scripts\\adjustableplatform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{540199BD-2A47-7EB2-6DA8-7078DD35C198}|Assembly-CSharp.csproj|E:\\Unity Projects\\ToyBox---GPT\\assets\\scripts\\adjustableplatform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{540199BD-2A47-7EB2-6DA8-7078DD35C198}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\adjustableplatform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -39,6 +43,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "PlatformHandle.cs",
+              "DocumentMoniker": "E:\\Unity Projects\\ToyBox---GPT\\Assets\\Scripts\\Toys\\PlatformHandle.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Toys\\PlatformHandle.cs",
+              "ToolTip": "E:\\Unity Projects\\ToyBox---GPT\\Assets\\Scripts\\Toys\\PlatformHandle.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Toys\\PlatformHandle.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAADwvyQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-31T02:18:30.185Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "PlatformToy.cs",
               "DocumentMoniker": "E:\\Unity Projects\\ToyBox---GPT\\Assets\\Scripts\\Toys\\PlatformToy.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Toys\\PlatformToy.cs",
@@ -51,7 +68,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "AdjustablePlatform.cs",
               "DocumentMoniker": "E:\\Unity Projects\\ToyBox---GPT\\Assets\\Scripts\\AdjustablePlatform.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\AdjustablePlatform.cs",
@@ -59,12 +76,11 @@
               "RelativeToolTip": "Assets\\Scripts\\AdjustablePlatform.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAE8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T23:57:52.026Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-30T23:57:52.026Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "AttachToUI.cs",
               "DocumentMoniker": "E:\\Unity Projects\\ToyBox---GPT\\Assets\\Scripts\\AttachToUI.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\AttachToUI.cs",
@@ -76,7 +92,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "DeleteOnTrigger.cs",
               "DocumentMoniker": "E:\\Unity Projects\\ToyBox---GPT\\Assets\\Scripts\\DeleteOnTrigger.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\DeleteOnTrigger.cs",
@@ -88,7 +104,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "FlingableBall.cs",
               "DocumentMoniker": "E:\\Unity Projects\\ToyBox---GPT\\Assets\\Scripts\\FlingableBall.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\FlingableBall.cs",
@@ -100,7 +116,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "ToyObject.cs",
               "DocumentMoniker": "E:\\Unity Projects\\ToyBox---GPT\\Assets\\Scripts\\ToyObject.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ToyObject.cs",
