@@ -63,10 +63,10 @@ public class FlingableBall : MonoBehaviour
     {
         if (!isDragging) return;
         isDragging = false;
-        wasReleasedByPlayer = true;
 
         rb.isKinematic = false;
 
+        // Determine fling velocity
         if (posSamples.Count >= 2)
         {
             Vector3 firstPos = posSamples.Peek();
@@ -88,9 +88,11 @@ public class FlingableBall : MonoBehaviour
             }
         }
 
+        wasReleasedByPlayer = true;
         posSamples.Clear();
         timeSamples.Clear();
     }
+
 
     private Vector3 GetMouseWorldPosition()
     {
