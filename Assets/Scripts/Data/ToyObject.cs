@@ -1,38 +1,45 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody), typeof(Collider))]
+[RequireComponent(typeof(Rigidbody2D))]
+[DisallowMultipleComponent]
 public class ToyObject : MonoBehaviour
 {
     public ToyProperties properties;
 
-    void Awake()
+    private void Awake()
     {
-        ApplyProperties();
+        if (properties != null)
+        {
+            ApplyProperties();
+        }
     }
 
-    void ApplyProperties()
+    public void ApplyProperties()
     {
         if (properties == null) return;
 
-        // Set mass
-        var rb = GetComponent<Rigidbody>();
-        rb.mass = properties.mass;
-        rb.angularDamping = 0.05f;
+        var rb = GetComponent<Rigidbody2D>();
+        if (rb != null)
+        {
+            rb.mass = properties.mass;
+            rb.linearDamping = 0f; // Customize if needed
+            rb.angularDamping = 0.05f; // Customize if needed
+            rb.gravityScale = 1f;
+        }
 
-        // Create and apply dynamic physics material
-        var collider = GetComponent<Collider>();
+        var collider = GetComponent<Collider2D>();
         if (collider != null)
         {
-            var mat = new PhysicsMaterial
+            PhysicsMaterial2D material = new PhysicsMaterial2D("ToyMaterial")
             {
                 bounciness = properties.bounciness,
-                dynamicFriction = properties.friction,
-                staticFriction = properties.friction,
-                bounceCombine = PhysicsMaterialCombine.Multiply,
-                frictionCombine = PhysicsMaterialCombine.Average
+                friction = properties.friction
             };
-
-            collider.material = mat;
+            collider.sharedMaterial = material;
+        }
+        else
+        {
+            Debug.LogWarning($"{name} has no Collider2D to apply physics material to.");
         }
     }
 }
