@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 050ecca576bfc8540964c1a0d78a9994, type: 3}
-  m_Name: TennisballDefinition 4
+  m_Name: VolleyballDefinition
   m_EditorClassIdentifier: 
-  displayName: Tennisball
-  prefab: {fileID: 4350874406377604858, guid: 6feee4d727a36f74eb5548ff688fc5ff, type: 3}
-  icon: {fileID: 21300000, guid: cb36573242747d649880b9e508be90ff, type: 3}
-  properties: {fileID: 11400000, guid: dd2dbcdc46b09cc4083984304f022cb7, type: 2}
+  displayName: Volleyball
+  prefab: {fileID: 89156558108113759, guid: 7a2b30dbe5a210f4e991e60f382de2b4, type: 3}
+  icon: {fileID: 21300000, guid: 22def6b711233d44b9ffdbe9c127fb21, type: 3}
+  properties: {fileID: 11400000, guid: d66686c10cea939469e160e3b67d6915, type: 2}
