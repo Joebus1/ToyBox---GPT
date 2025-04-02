@@ -6,40 +6,53 @@ public class ToyObject : MonoBehaviour
 {
     public ToyProperties properties;
 
+    private Rigidbody2D rb;
+    private Collider2D col;
+
     private void Awake()
     {
+        rb = GetComponent<Rigidbody2D>();
+        col = GetComponent<Collider2D>();
+
         if (properties != null)
         {
             ApplyProperties();
+        }
+        else
+        {
+            Debug.LogWarning($"ToyObject on {gameObject.name} has no ToyProperties assigned.");
         }
     }
 
     public void ApplyProperties()
     {
-        if (properties == null) return;
-
-        var rb = GetComponent<Rigidbody2D>();
-        if (rb != null)
+        if (properties == null || rb == null || col == null)
         {
-            rb.mass = properties.mass;
-            rb.linearDamping = 0f; // Customize if needed
-            rb.angularDamping = 0.05f; // Customize if needed
-            rb.gravityScale = 1f;
+            Debug.LogWarning($"Missing reference on {gameObject.name} in ApplyProperties.");
+            return;
         }
 
-        var collider = GetComponent<Collider2D>();
-        if (collider != null)
+        // Mass & Rigidbody2D physics
+        rb.mass = properties.mass;
+        rb.linearDamping = 0f;
+        rb.angularDamping = 0.05f;
+        rb.gravityScale = 1f;
+
+        // Material assignment
+        var mat = new PhysicsMaterial2D("RuntimeToyMaterial")
         {
-            PhysicsMaterial2D material = new PhysicsMaterial2D("ToyMaterial")
-            {
-                bounciness = properties.bounciness,
-                friction = properties.friction
-            };
-            collider.sharedMaterial = material;
-        }
-        else
+            bounciness = properties.bounciness,
+            friction = properties.friction
+        };
+
+        col.sharedMaterial = mat;
+    }
+
+    public void ResetMaterial()
+    {
+        if (col != null)
         {
-            Debug.LogWarning($"{name} has no Collider2D to apply physics material to.");
+            col.sharedMaterial = null;
         }
     }
 }

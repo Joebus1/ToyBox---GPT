@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f16a4d1ba4d17346a6f896def4d5062, type: 3}
   m_Name: Volleyball
   m_EditorClassIdentifier: 
-  mass: 1
-  bounciness: 0.5
-  friction: 0.1
+  mass: 0.27
+  bounciness: 0.6
+  friction: 0.3

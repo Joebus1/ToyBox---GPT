@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f16a4d1ba4d17346a6f896def4d5062, type: 3}
   m_Name: Baseball
   m_EditorClassIdentifier: 
-  mass: 1
-  bounciness: 0.5
-  friction: 0.1
+  mass: 0.145
+  bounciness: 0.2
+  friction: 0.5
