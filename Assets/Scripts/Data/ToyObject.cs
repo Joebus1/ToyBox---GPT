@@ -1,18 +1,18 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Rigidbody))]
 [DisallowMultipleComponent]
 public class ToyObject : MonoBehaviour
 {
     public ToyProperties properties;
 
-    private Rigidbody2D rb;
-    private Collider2D col;
+    private Rigidbody rb;
+    private Collider col;
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
-        col = GetComponent<Collider2D>();
+        rb = GetComponent<Rigidbody>();
+        col = GetComponent<Collider>();
 
         if (properties != null)
         {
@@ -32,27 +32,30 @@ public class ToyObject : MonoBehaviour
             return;
         }
 
-        // Mass & Rigidbody2D physics
+        // Apply mass
         rb.mass = properties.mass;
+        rb.useGravity = true;
         rb.linearDamping = 0f;
         rb.angularDamping = 0.05f;
-        rb.gravityScale = 1f;
 
-        // Material assignment
-        var mat = new PhysicsMaterial2D("RuntimeToyMaterial")
+        // Apply physics material dynamically
+        PhysicsMaterial material = new PhysicsMaterial("ToyMaterial")
         {
             bounciness = properties.bounciness,
-            friction = properties.friction
+            dynamicFriction = properties.friction,
+            staticFriction = properties.friction,
+            bounceCombine = PhysicsMaterialCombine.Maximum,
+            frictionCombine = PhysicsMaterialCombine.Average
         };
 
-        col.sharedMaterial = mat;
+        col.material = material;
     }
 
     public void ResetMaterial()
     {
         if (col != null)
         {
-            col.sharedMaterial = null;
+            col.material = null;
         }
     }
 }
