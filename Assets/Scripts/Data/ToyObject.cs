@@ -1,34 +1,45 @@
-using UnityEngine;
+﻿using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody), typeof(Collider))]
+[RequireComponent(typeof(Rigidbody))]
 [DisallowMultipleComponent]
 public class ToyObject : MonoBehaviour
 {
     public ToyProperties properties;
 
+    private Rigidbody rb;
+    private Collider col;
+
     private void Awake()
     {
-        ApplyProperties();
+        rb = GetComponent<Rigidbody>();
+        col = GetComponent<Collider>();
+
+        if (properties != null)
+        {
+            ApplyProperties();
+        }
+        else
+        {
+            Debug.LogWarning($"ToyObject on {gameObject.name} has no ToyProperties assigned.");
+        }
     }
 
     public void ApplyProperties()
     {
-        if (properties == null)
+        if (properties == null || rb == null || col == null)
         {
-            Debug.LogWarning($"ToyObject on {gameObject.name} has no ToyProperties assigned.");
+            Debug.LogWarning($"Missing reference on {gameObject.name} in ApplyProperties.");
             return;
         }
 
-        Rigidbody rb = GetComponent<Rigidbody>();
-        Collider col = GetComponent<Collider>();
-
+        // Apply mass
         rb.mass = properties.mass;
+        rb.useGravity = true;
         rb.linearDamping = 0f;
         rb.angularDamping = 0.05f;
-        rb.useGravity = true;
 
-        // Create a runtime PhysicsMaterial and assign it.
-        PhysicsMaterial mat = new PhysicsMaterial("RuntimeToyMaterial")
+        // Apply physics material dynamically
+        PhysicsMaterial material = new PhysicsMaterial("ToyMaterial")
         {
             bounciness = properties.bounciness,
             dynamicFriction = properties.friction,
@@ -37,6 +48,14 @@ public class ToyObject : MonoBehaviour
             frictionCombine = PhysicsMaterialCombine.Average
         };
 
-        col.material = mat;
+        col.material = material;
+    }
+
+    public void ResetMaterial()
+    {
+        if (col != null)
+        {
+            col.material = null;
+        }
     }
 }

@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "D:\\Unity Projects\\ToyBox - GPT\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{85E396F4-41D0-57F2-07B1-E4A5A0D3E9C1}|Assembly-CSharp.csproj|d:\\unity projects\\toybox - gpt\\assets\\scripts\\playareawalls.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85E396F4-41D0-57F2-07B1-E4A5A0D3E9C1}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playareawalls.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{85E396F4-41D0-57F2-07B1-E4A5A0D3E9C1}|Assembly-CSharp.csproj|d:\\unity projects\\toybox - gpt\\assets\\scripts\\toys\\platform\\platformtoy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85E396F4-41D0-57F2-07B1-E4A5A0D3E9C1}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\toys\\platform\\platformtoy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85E396F4-41D0-57F2-07B1-E4A5A0D3E9C1}|Assembly-CSharp.csproj|d:\\unity projects\\toybox - gpt\\assets\\scripts\\data\\toyobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85E396F4-41D0-57F2-07B1-E4A5A0D3E9C1}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\data\\toyobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,19 +18,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "PlayAreaWalls.cs",
-              "DocumentMoniker": "D:\\Unity Projects\\ToyBox - GPT\\Assets\\Scripts\\PlayAreaWalls.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\PlayAreaWalls.cs",
-              "ToolTip": "D:\\Unity Projects\\ToyBox - GPT\\Assets\\Scripts\\PlayAreaWalls.cs",
-              "RelativeToolTip": "Assets\\Scripts\\PlayAreaWalls.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAkwD0AAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "ToyObject.cs",
+              "DocumentMoniker": "D:\\Unity Projects\\ToyBox - GPT\\Assets\\Scripts\\Data\\ToyObject.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Data\\ToyObject.cs",
+              "ToolTip": "D:\\Unity Projects\\ToyBox - GPT\\Assets\\Scripts\\Data\\ToyObject.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Data\\ToyObject.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-27T18:39:54.739Z",
+              "WhenOpened": "2025-04-02T14:59:31.309Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PlatformToy.cs",
+              "DocumentMoniker": "D:\\Unity Projects\\ToyBox - GPT\\Assets\\Scripts\\Toys\\Platform\\PlatformToy.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Toys\\Platform\\PlatformToy.cs",
+              "ToolTip": "D:\\Unity Projects\\ToyBox - GPT\\Assets\\Scripts\\Toys\\Platform\\PlatformToy.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Toys\\Platform\\PlatformToy.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T14:51:08.119Z",
               "EditorCaption": ""
             }
           ]
