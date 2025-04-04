@@ -1,84 +1,62 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
 
+[DisallowMultipleComponent]
 public class PlatformToy : MonoBehaviour
 {
-    public Transform platform;      // Usually the "Body"
-    public Transform pivot;         // Custom pivot object
-    public Transform leftHandle;
-    public Transform rightHandle;
+    public Transform platform;   // Main visual object
+    public Transform pivot;      // Center pivot point
+    public Transform leftHandle; // Left red tip
+    public Transform rightHandle;// Right red tip
 
-    private bool isDragging = false;
-    private bool rotating = false;
-    private Vector3 offset;
-    private Camera mainCamera;
+    private bool draggingPlatform = false;
+    private bool draggingHandle = false;
+    private Vector3 dragOffset;
+    private Transform draggedHandle;
 
-    void Start()
-    {
-        mainCamera = Camera.main;
-
-        // Make platform non-physical (static) but still interactable
-        Rigidbody rb = GetComponent<Rigidbody>();
-        if (rb)
-        {
-            rb.isKinematic = true;
-            rb.useGravity = false;
-        }
-    }
-
-    void Update()
+    private void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Vector3 mouseWorld = GetMouseWorldPosition();
-
-            if (IsPointerOverHandle(leftHandle, mouseWorld) || IsPointerOverHandle(rightHandle, mouseWorld))
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out RaycastHit hit))
             {
-                rotating = true;
+                if (hit.transform == leftHandle || hit.transform == rightHandle)
+                {
+                    draggingHandle = true;
+                    draggedHandle = hit.transform;
+                }
+                else if (hit.transform == platform)
+                {
+                    draggingPlatform = true;
+                    dragOffset = platform.position - hit.point;
+                }
             }
-            else if (IsPointerOverPlatform(mouseWorld))
+        }
+
+        if (Input.GetMouseButton(0))
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out RaycastHit hit))
             {
-                isDragging = true;
-                offset = transform.position - mouseWorld;
+                if (draggingHandle && draggedHandle != null)
+                {
+                    Vector3 direction = hit.point - pivot.position;
+                    direction.z = 0; // lock to 2D plane
+                    platform.rotation = Quaternion.LookRotation(Vector3.forward, direction);
+                }
+                else if (draggingPlatform)
+                {
+                    Vector3 newPos = hit.point + dragOffset;
+                    newPos.z = platform.position.z;
+                    platform.position = newPos;
+                }
             }
         }
-        else if (Input.GetMouseButtonUp(0))
+
+        if (Input.GetMouseButtonUp(0))
         {
-            isDragging = false;
-            rotating = false;
+            draggingHandle = false;
+            draggingPlatform = false;
         }
-
-        if (isDragging)
-        {
-            Vector3 targetPos = GetMouseWorldPosition() + offset;
-            transform.position = targetPos;
-        }
-
-        if (rotating)
-        {
-            Vector3 dir = GetMouseWorldPosition() - pivot.position;
-            float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-            platform.rotation = Quaternion.Euler(0f, 0f, angle);
-        }
-    }
-
-    Vector3 GetMouseWorldPosition()
-    {
-        Vector3 mouse = Input.mousePosition;
-        mouse.z = Mathf.Abs(mainCamera.transform.position.z); // if using orthographic, set manually
-        return mainCamera.ScreenToWorldPoint(mouse);
-    }
-
-    bool IsPointerOverHandle(Transform handle, Vector3 mousePos)
-    {
-        float dist = Vector3.Distance(mousePos, handle.position);
-        return dist < 0.4f; // adjust if needed
-    }
-
-    bool IsPointerOverPlatform(Vector3 mousePos)
-    {
-        Collider col = GetComponent<Collider>();
-        if (col == null) return false;
-        return col.bounds.Contains(mousePos);
     }
 }
