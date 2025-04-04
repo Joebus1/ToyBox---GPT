@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: PlatformDefinition
   m_EditorClassIdentifier: 
   displayName: Platform
-  prefab: {fileID: 4275502765473932268, guid: 031b8694f3320a44da55657ff99547c4, type: 3}
+  prefab: {fileID: 2298244735626052667, guid: 0bdd503ef059a254b9556263a0cebfcf, type: 3}
   icon: {fileID: 21300000, guid: a5517bd88d9db874dacee2a0c309a9b5, type: 3}
   properties: {fileID: 11400000, guid: 2ee6367ed87cf274d9c8719200476a8c, type: 2}
