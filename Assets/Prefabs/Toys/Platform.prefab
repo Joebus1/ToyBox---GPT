@@ -70,7 +70,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7921954276207858558, guid: 3170c7715ad5c88459c0fa2c5f734059, type: 3}
       propertyPath: m_Name
-      value: Body
+      value: Platform
       objectReference: {fileID: 0}
     - target: {fileID: -1088581628672697554, guid: 3170c7715ad5c88459c0fa2c5f734059, type: 3}
       propertyPath: m_Name
@@ -117,7 +117,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2298244735626052667}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: ebc86268c5e6cb846a2171d1880dc3a1, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -129,8 +129,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 0.0523, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.001184, y: 0.0523, z: 1}
+  m_Center: {x: 0.00059199333, y: 0, z: 0}
 --- !u!54 &5893936780965279000
 Rigidbody:
   m_ObjectHideFlags: 0
