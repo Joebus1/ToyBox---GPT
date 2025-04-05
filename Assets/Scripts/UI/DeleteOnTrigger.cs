@@ -8,7 +8,7 @@ public class DeleteOnTrigger : MonoBehaviour
     {
         if (!other.CompareTag("Toy")) return;
 
-        FlingableBall flingable = other.GetComponent<FlingableBall>();
+        DraggableObject flingable = other.GetComponent<DraggableObject>();
         Rigidbody rb = other.attachedRigidbody;
 
         if (flingable != null && flingable.wasReleasedByPlayer && rb != null)

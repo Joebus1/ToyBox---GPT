@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 2703506869828945867}
   - component: {fileID: 9007119325422795771}
   - component: {fileID: -7533080690586052628}
-  - component: {fileID: -52217583742886719}
   - component: {fileID: 7576246414057682685}
+  - component: {fileID: 4901602912991262981}
   m_Layer: 0
   m_Name: Baseball
   m_TagString: Toy
@@ -138,21 +138,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 8
   m_CollisionDetection: 2
---- !u!114 &-52217583742886719
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3169090002416453430}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 139bbd7f0e02f664b80a44231fc078d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flingMultiplier: 1.5
-  sampleCount: 5
-  wasReleasedByPlayer: 0
 --- !u!114 &7576246414057682685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,3 +151,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   properties: {fileID: 11400000, guid: 85f4a02933f3c5245b1ea0be3c02ccb3, type: 2}
+--- !u!114 &4901602912991262981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3169090002416453430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae1ec148003f09843a7e0f459285f52c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDynamic: 1
+  flingMultiplier: 1.5

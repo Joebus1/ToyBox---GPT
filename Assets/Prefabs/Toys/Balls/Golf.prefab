@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 6983288533070245324}
   - component: {fileID: -1522159737329551590}
   - component: {fileID: 6726589969395461646}
-  - component: {fileID: -3158077751369125864}
   - component: {fileID: 6941902482162659399}
+  - component: {fileID: 1060251353680821678}
   m_Layer: 0
   m_Name: Golf
   m_TagString: Toy
@@ -138,21 +138,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 8
   m_CollisionDetection: 2
---- !u!114 &-3158077751369125864
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2099316281507514234}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 139bbd7f0e02f664b80a44231fc078d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flingMultiplier: 1.5
-  sampleCount: 5
-  wasReleasedByPlayer: 0
 --- !u!114 &6941902482162659399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,3 +151,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   properties: {fileID: 11400000, guid: b5ee7c3c1f58154469ef1208a357e5ce, type: 2}
+--- !u!114 &1060251353680821678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2099316281507514234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae1ec148003f09843a7e0f459285f52c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDynamic: 1
+  flingMultiplier: 1.5
