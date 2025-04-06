@@ -1,24 +1,18 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public class DeleteOnTrigger : MonoBehaviour
 {
-    public float velocityThreshold = 0.1f;
+    public float velocityThreshold = 0.2f; // Adjust as needed
 
     private void OnTriggerStay(Collider other)
     {
         if (!other.CompareTag("Toy")) return;
 
-        DraggableObject flingable = other.GetComponent<DraggableObject>();
         Rigidbody rb = other.attachedRigidbody;
-
-        if (flingable != null && flingable.wasReleasedByPlayer && rb != null)
+        if (rb != null && rb.linearVelocity.magnitude < velocityThreshold)
         {
-            // Only delete if it's basically not moving
-            if (rb.linearVelocity.magnitude < velocityThreshold)
-            {
-                flingable.wasReleasedByPlayer = false;
-                Destroy(other.gameObject);
-            }
+            // Only delete if the object is essentially not moving
+            Destroy(other.gameObject);
         }
     }
 }

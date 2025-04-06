@@ -1,35 +1,38 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody), typeof(Collider))]
+[DisallowMultipleComponent]
 public class ToyObject : MonoBehaviour
 {
     public ToyProperties properties;
 
-    void Awake()
+    private void Awake()
     {
         ApplyProperties();
     }
 
-    void ApplyProperties()
+    public void ApplyProperties()
     {
         if (properties == null) return;
 
-        var rb = GetComponent<Rigidbody>();
-        rb.mass = properties.mass;
-        rb.angularDamping = 0.05f;
+        Rigidbody rb = GetComponent<Rigidbody>();
+        Collider col = GetComponent<Collider>();
 
-        var collider = GetComponent<Collider>();
-        if (collider != null)
+        // Apply physics settings
+        rb.mass = properties.mass;
+        rb.linearDamping = 0f;
+        rb.angularDamping = 0.05f;
+        rb.useGravity = true;
+
+        // Create and assign a runtime Physics Material
+        PhysicsMaterial mat = new PhysicsMaterial("RuntimeToyMaterial")
         {
-            var mat = new PhysicsMaterial
-            {
-                bounciness = properties.bounciness,
-                dynamicFriction = properties.friction,
-                staticFriction = properties.friction,
-                bounceCombine = PhysicsMaterialCombine.Maximum,
-                frictionCombine = PhysicsMaterialCombine.Minimum
-            };
-            collider.material = mat;
-        }
+            bounciness = properties.bounciness,
+            dynamicFriction = properties.friction,
+            staticFriction = properties.friction,
+            bounceCombine = PhysicsMaterialCombine.Maximum,
+            frictionCombine = PhysicsMaterialCombine.Average
+        };
+        col.material = mat;
     }
 }

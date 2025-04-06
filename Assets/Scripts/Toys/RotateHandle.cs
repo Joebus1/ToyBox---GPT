@@ -3,9 +3,9 @@ using UnityEngine.EventSystems;
 
 public class RotateHandle : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUpHandler
 {
-    [Tooltip("Reference to the platform's Body that will rotate.")]
+    [Tooltip("Reference to the platform's Body that should rotate.")]
     public Transform platform;
-    [Tooltip("Reference to the Pivot point (around which the platform rotates).")]
+    [Tooltip("Reference to the Pivot object around which rotation occurs.")]
     public Transform pivot;
 
     private bool rotating = false;
@@ -38,7 +38,7 @@ public class RotateHandle : MonoBehaviour, IPointerDownHandler, IDragHandler, IP
 
     private Vector3 GetMouseWorldPosition(PointerEventData eventData)
     {
-        Vector3 screenPos = new(eventData.position.x, eventData.position.y, Mathf.Abs(mainCam.transform.position.z));
+        Vector3 screenPos = new Vector3(eventData.position.x, eventData.position.y, Mathf.Abs(mainCam.transform.position.z));
         return mainCam.ScreenToWorldPoint(screenPos);
     }
 }

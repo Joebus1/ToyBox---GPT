@@ -3,11 +3,11 @@ using UnityEngine.EventSystems;
 
 public class DraggableObject : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUpHandler
 {
-    [Header("Drag Settings")]
-    [Tooltip("If true, uses physics-based fling (for dynamic objects like balls). If false, uses simple transform drag (for static objects like platforms).")]
+    [Header("Drag Mode")]
+    [Tooltip("If true, object uses fling physics (dynamic, e.g., balls). If false, it uses simple transform drag (static, e.g., platforms).")]
     public bool isDynamic = true;
 
-    [Tooltip("Multiplier for fling velocity (only used if isDynamic is true).")]
+    [Tooltip("Fling multiplier (only for dynamic objects)")]
     public float flingMultiplier = 1.5f;
 
     private Vector3 dragOffset;
@@ -15,9 +15,9 @@ public class DraggableObject : MonoBehaviour, IPointerDownHandler, IDragHandler,
     private Camera mainCam;
     private Rigidbody rb;
 
-    // For fling calculations (only for dynamic objects)
+    // For dynamic fling
     private Vector3 lastMouseWorldPos;
-    private Vector3 flingVelocity;
+    private Vector3 calculatedFlingVelocity;
 
     void Awake()
     {
@@ -28,7 +28,7 @@ public class DraggableObject : MonoBehaviour, IPointerDownHandler, IDragHandler,
     public void OnPointerDown(PointerEventData eventData)
     {
         dragging = true;
-        // For dynamic objects, switch to kinematic while dragging.
+        // For dynamic toys, switch to kinematic while dragging
         if (isDynamic && rb != null)
         {
             rb.isKinematic = true;
@@ -40,13 +40,13 @@ public class DraggableObject : MonoBehaviour, IPointerDownHandler, IDragHandler,
 
     public void OnDrag(PointerEventData eventData)
     {
+        if (!dragging) return;
         Vector3 worldPos = GetMouseWorldPosition(eventData);
         transform.position = worldPos + dragOffset;
-
         if (isDynamic)
         {
-            // Calculate fling velocity over the last frame
-            flingVelocity = (worldPos - lastMouseWorldPos) / Time.deltaTime;
+            // Calculate fling velocity based on movement over time
+            calculatedFlingVelocity = (worldPos - lastMouseWorldPos) / Time.deltaTime;
             lastMouseWorldPos = worldPos;
         }
     }
@@ -57,13 +57,13 @@ public class DraggableObject : MonoBehaviour, IPointerDownHandler, IDragHandler,
         if (isDynamic && rb != null)
         {
             rb.isKinematic = false;
-            rb.linearVelocity = flingVelocity * flingMultiplier;
+            rb.linearVelocity = calculatedFlingVelocity * flingMultiplier;
         }
     }
 
     private Vector3 GetMouseWorldPosition(PointerEventData eventData)
     {
-        Vector3 screenPos = new Vector3(eventData.position.x, eventData.position.y, Mathf.Abs(mainCam.transform.position.z));
+        Vector3 screenPos = new(eventData.position.x, eventData.position.y, Mathf.Abs(mainCam.transform.position.z));
         return mainCam.ScreenToWorldPoint(screenPos);
     }
 }
