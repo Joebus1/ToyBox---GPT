@@ -39,7 +39,7 @@ public class ToyObject : MonoBehaviour
         rb.angularDamping = 0.05f;
 
         // Apply physics material dynamically
-        PhysicsMaterial material = new PhysicsMaterial("ToyMaterial")
+        PhysicsMaterial material = new("ToyMaterial")
         {
             bounciness = properties.bounciness,
             dynamicFriction = properties.friction,

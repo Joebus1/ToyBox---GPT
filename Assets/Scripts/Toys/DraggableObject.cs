@@ -1,71 +1,45 @@
-using UnityEngine;
-using UnityEngine.EventSystems;
+﻿using UnityEngine;
 
-public class DraggableObject : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUpHandler
+[RequireComponent(typeof(Rigidbody))]
+public class DraggableObject : MonoBehaviour
 {
-    [Header("Drag Mode")]
-    [Tooltip("If true, object uses physics-based fling (for dynamic objects like balls). If false, uses simple transform drag (for static objects like platforms).")]
-    public bool isDynamic = true;
-
-    [Tooltip("Fling multiplier (only used if isDynamic is true).")]
-    public float flingMultiplier = 1.5f;
-
-    private Vector3 dragOffset;
-    private bool dragging = false;
-    private Camera mainCam;
+    private Vector3 offset;
+    private Camera cam;
     private Rigidbody rb;
 
-    // For dynamic fling calculations
-    private Vector3 lastMouseWorldPos;
-    private Vector3 calculatedFlingVelocity;
+    // 🔁 This is the important property needed for DeleteOnTrigger.cs
+    public bool WasReleasedByPlayer { get; private set; }
 
     void Awake()
     {
-        mainCam = Camera.main;
+        cam = Camera.main;
         rb = GetComponent<Rigidbody>();
     }
 
-    public void OnPointerDown(PointerEventData eventData)
+    void OnMouseDown()
     {
-        dragging = true;
-        // For dynamic toys, switch to kinematic while dragging.
-        if (isDynamic && rb != null)
-        {
-            rb.isKinematic = true;
-        }
-        Vector3 worldPos = GetMouseWorldPosition(eventData);
-        dragOffset = transform.position - worldPos;
-        lastMouseWorldPos = worldPos;
+        WasReleasedByPlayer = false;
+        offset = transform.position - GetMouseWorldPosition();
+        rb.isKinematic = true;
     }
 
-    public void OnDrag(PointerEventData eventData)
+    void OnMouseDrag()
     {
-        if (!dragging) return;
-
-        Vector3 worldPos = GetMouseWorldPosition(eventData);
-        transform.position = worldPos + dragOffset;
-
-        if (isDynamic && rb != null)
-        {
-            // Calculate fling velocity based on movement
-            calculatedFlingVelocity = (worldPos - lastMouseWorldPos) / Time.deltaTime;
-            lastMouseWorldPos = worldPos;
-        }
+        Vector3 target = GetMouseWorldPosition() + offset;
+        target.z = 0f;
+        transform.position = target;
     }
 
-    public void OnPointerUp(PointerEventData eventData)
+    void OnMouseUp()
     {
-        dragging = false;
-        if (isDynamic && rb != null)
-        {
-            rb.isKinematic = false;
-            rb.linearVelocity = calculatedFlingVelocity * flingMultiplier;
-        }
+        WasReleasedByPlayer = true;
+        rb.isKinematic = false;
     }
 
-    private Vector3 GetMouseWorldPosition(PointerEventData eventData)
+    private Vector3 GetMouseWorldPosition()
     {
-        Vector3 screenPos = new Vector3(eventData.position.x, eventData.position.y, Mathf.Abs(mainCam.transform.position.z));
-        return mainCam.ScreenToWorldPoint(screenPos);
+        Vector3 screen = Input.mousePosition;
+        screen.z = Mathf.Abs(cam.transform.position.z);
+        return cam.ScreenToWorldPoint(screen);
     }
 }

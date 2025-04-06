@@ -8,10 +8,15 @@ public class DeleteOnTrigger : MonoBehaviour
     {
         if (!other.CompareTag("Toy")) return;
 
+        DraggableObject draggable = other.GetComponent<DraggableObject>();
         Rigidbody rb = other.attachedRigidbody;
-        if (rb != null && rb.linearVelocity.magnitude <= velocityThreshold)
+
+        if (draggable != null && rb != null)
         {
-            Destroy(other.gameObject);
+            if (draggable.WasReleasedByPlayer && rb.linearVelocity.magnitude <= velocityThreshold)
+            {
+                Destroy(other.gameObject);
+            }
         }
     }
 }

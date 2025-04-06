@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6726589969395461646}
   - component: {fileID: 6941902482162659399}
   - component: {fileID: 5617937302463261632}
-  - component: {fileID: 3294334400793597018}
+  - component: {fileID: -1210522931524548785}
   m_Layer: 0
   m_Name: Golf
   m_TagString: Toy
@@ -167,7 +167,7 @@ MonoBehaviour:
   flingMultiplier: 1.5
   sampleCount: 5
   wasReleasedByPlayer: 0
---- !u!114 &3294334400793597018
+--- !u!114 &-1210522931524548785
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -176,6 +176,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 2099316281507514234}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82c1cf1cd26c49a4b9217918f337f64e, type: 3}
+  m_Script: {fileID: 11500000, guid: ae1ec148003f09843a7e0f459285f52c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

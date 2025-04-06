@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -2920451003905169645}
   - component: {fileID: -5581631927600149647}
   - component: {fileID: -1398150858169251328}
-  - component: {fileID: -7324913680576867635}
+  - component: {fileID: 5379140187252387348}
   m_Layer: 0
   m_Name: Soccer
   m_TagString: Toy
@@ -167,7 +167,7 @@ MonoBehaviour:
   flingMultiplier: 1.5
   sampleCount: 5
   wasReleasedByPlayer: 0
---- !u!114 &-7324913680576867635
+--- !u!114 &5379140187252387348
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -176,6 +176,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 7074948992791993279}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82c1cf1cd26c49a4b9217918f337f64e, type: 3}
+  m_Script: {fileID: 11500000, guid: ae1ec148003f09843a7e0f459285f52c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
