@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: -5416178133516043166}
   - component: {fileID: -744476435862280063}
   - component: {fileID: 8645868931374670661}
-  - component: {fileID: -4886127693632538790}
+  - component: {fileID: -6553964768361294394}
+  - component: {fileID: -1420192058403200045}
   m_Layer: 0
   m_Name: Football
   m_TagString: Toy
@@ -151,7 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   properties: {fileID: 11400000, guid: f3c00d88fb3226543b0ca9b26056c602, type: 2}
---- !u!114 &-4886127693632538790
+--- !u!114 &-6553964768361294394
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -160,8 +161,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 3978156976444542998}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae1ec148003f09843a7e0f459285f52c, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ab743c6fd6145649913981842c1610b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDynamic: 1
   flingMultiplier: 1.5
+  sampleCount: 5
+  wasReleasedByPlayer: 0
+--- !u!114 &-1420192058403200045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3978156976444542998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82c1cf1cd26c49a4b9217918f337f64e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

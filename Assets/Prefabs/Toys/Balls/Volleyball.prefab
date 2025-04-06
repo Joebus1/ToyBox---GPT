@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 391033802532763114}
   - component: {fileID: -7529698889311372187}
   - component: {fileID: 4252379669566562222}
-  - component: {fileID: 381461694794367763}
+  - component: {fileID: -7957063632317336401}
+  - component: {fileID: 8166049103586159921}
   m_Layer: 0
   m_Name: Volleyball
   m_TagString: Toy
@@ -151,7 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   properties: {fileID: 11400000, guid: d66686c10cea939469e160e3b67d6915, type: 2}
---- !u!114 &381461694794367763
+--- !u!114 &-7957063632317336401
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -160,8 +161,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 89156558108113759}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae1ec148003f09843a7e0f459285f52c, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ab743c6fd6145649913981842c1610b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDynamic: 1
   flingMultiplier: 1.5
+  sampleCount: 5
+  wasReleasedByPlayer: 0
+--- !u!114 &8166049103586159921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89156558108113759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82c1cf1cd26c49a4b9217918f337f64e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

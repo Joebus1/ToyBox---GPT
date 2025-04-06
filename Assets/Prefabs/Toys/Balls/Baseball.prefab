@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 9007119325422795771}
   - component: {fileID: -7533080690586052628}
   - component: {fileID: 7576246414057682685}
-  - component: {fileID: 4901602912991262981}
+  - component: {fileID: -5634720734387491711}
+  - component: {fileID: 3598635153579590778}
   m_Layer: 0
   m_Name: Baseball
   m_TagString: Toy
@@ -151,7 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   properties: {fileID: 11400000, guid: 85f4a02933f3c5245b1ea0be3c02ccb3, type: 2}
---- !u!114 &4901602912991262981
+--- !u!114 &-5634720734387491711
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -160,8 +161,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 3169090002416453430}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae1ec148003f09843a7e0f459285f52c, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ab743c6fd6145649913981842c1610b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDynamic: 1
   flingMultiplier: 1.5
+  sampleCount: 5
+  wasReleasedByPlayer: 0
+--- !u!114 &3598635153579590778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3169090002416453430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82c1cf1cd26c49a4b9217918f337f64e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
