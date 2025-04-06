@@ -3,9 +3,9 @@ using UnityEngine.EventSystems;
 
 public class RotateHandle : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUpHandler
 {
-    [Tooltip("Reference to the platform's Body that should rotate.")]
+    [Tooltip("Reference to the platform's Body (the visual part that rotates).")]
     public Transform platform;
-    [Tooltip("Reference to the Pivot object around which rotation occurs.")]
+    [Tooltip("Reference to the Pivot point (the rotation center).")]
     public Transform pivot;
 
     private bool rotating = false;

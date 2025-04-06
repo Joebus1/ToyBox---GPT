@@ -1,7 +1,24 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "E:\\Unity Projects\\ToyBox---GPT\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{540199BD-2A47-7EB2-6DA8-7078DD35C198}|Assembly-CSharp.csproj|e:\\unity projects\\toybox---gpt\\assets\\scripts\\ui\\deleteontrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{540199BD-2A47-7EB2-6DA8-7078DD35C198}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\deleteontrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{540199BD-2A47-7EB2-6DA8-7078DD35C198}|Assembly-CSharp.csproj|e:\\unity projects\\toybox---gpt\\assets\\scripts\\toys\\draggableobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{540199BD-2A47-7EB2-6DA8-7078DD35C198}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\toys\\draggableobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{540199BD-2A47-7EB2-6DA8-7078DD35C198}|Assembly-CSharp.csproj|e:\\unity projects\\toybox---gpt\\assets\\scripts\\data\\toyobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{540199BD-2A47-7EB2-6DA8-7078DD35C198}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\data\\toyobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{540199BD-2A47-7EB2-6DA8-7078DD35C198}|Assembly-CSharp.csproj|e:\\unity projects\\toybox---gpt\\assets\\scripts\\toys\\rotatehandle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{540199BD-2A47-7EB2-6DA8-7078DD35C198}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\toys\\rotatehandle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +26,63 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{c9c0ae26-aa77-11d2-b3f0-0000f87570ee}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DeleteOnTrigger.cs",
+              "DocumentMoniker": "E:\\Unity Projects\\ToyBox---GPT\\Assets\\Scripts\\UI\\DeleteOnTrigger.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\DeleteOnTrigger.cs",
+              "ToolTip": "E:\\Unity Projects\\ToyBox---GPT\\Assets\\Scripts\\UI\\DeleteOnTrigger.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI\\DeleteOnTrigger.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-06T01:31:30.478Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RotateHandle.cs",
+              "DocumentMoniker": "E:\\Unity Projects\\ToyBox---GPT\\Assets\\Scripts\\Toys\\RotateHandle.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Toys\\RotateHandle.cs",
+              "ToolTip": "E:\\Unity Projects\\ToyBox---GPT\\Assets\\Scripts\\Toys\\RotateHandle.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Toys\\RotateHandle.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAADwvywAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-06T01:30:59.484Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ToyObject.cs",
+              "DocumentMoniker": "E:\\Unity Projects\\ToyBox---GPT\\Assets\\Scripts\\Data\\ToyObject.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Data\\ToyObject.cs",
+              "ToolTip": "E:\\Unity Projects\\ToyBox---GPT\\Assets\\Scripts\\Data\\ToyObject.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Data\\ToyObject.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAkwCoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-06T01:30:11.714Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DraggableObject.cs",
+              "DocumentMoniker": "E:\\Unity Projects\\ToyBox---GPT\\Assets\\Scripts\\Toys\\DraggableObject.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Toys\\DraggableObject.cs",
+              "ToolTip": "E:\\Unity Projects\\ToyBox---GPT\\Assets\\Scripts\\Toys\\DraggableObject.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Toys\\DraggableObject.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAkwEcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-06T01:29:32.514Z",
+              "EditorCaption": ""
             }
           ]
         }

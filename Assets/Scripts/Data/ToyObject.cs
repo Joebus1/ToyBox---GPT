@@ -13,18 +13,21 @@ public class ToyObject : MonoBehaviour
 
     public void ApplyProperties()
     {
-        if (properties == null) return;
+        if (properties == null)
+        {
+            Debug.LogWarning($"ToyObject on {gameObject.name} has no ToyProperties assigned.");
+            return;
+        }
 
         Rigidbody rb = GetComponent<Rigidbody>();
         Collider col = GetComponent<Collider>();
 
-        // Apply physics settings
         rb.mass = properties.mass;
         rb.linearDamping = 0f;
         rb.angularDamping = 0.05f;
         rb.useGravity = true;
 
-        // Create and assign a runtime Physics Material
+        // Create a runtime PhysicsMaterial and assign it.
         PhysicsMaterial mat = new PhysicsMaterial("RuntimeToyMaterial")
         {
             bounciness = properties.bounciness,
@@ -33,6 +36,7 @@ public class ToyObject : MonoBehaviour
             bounceCombine = PhysicsMaterialCombine.Maximum,
             frictionCombine = PhysicsMaterialCombine.Average
         };
+
         col.material = mat;
     }
 }

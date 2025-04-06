@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class DeleteOnTrigger : MonoBehaviour
 {
-    public float velocityThreshold = 0.2f; // Adjust as needed
+    public float velocityThreshold = 0.2f;
 
     private void OnTriggerStay(Collider other)
     {
@@ -11,7 +11,6 @@ public class DeleteOnTrigger : MonoBehaviour
         Rigidbody rb = other.attachedRigidbody;
         if (rb != null && rb.linearVelocity.magnitude < velocityThreshold)
         {
-            // Only delete if the object is essentially not moving
             Destroy(other.gameObject);
         }
     }
