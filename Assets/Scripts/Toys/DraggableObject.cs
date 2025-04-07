@@ -1,14 +1,18 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(Rigidbody))]
-public class DraggableObject : MonoBehaviour
+public class DraggableObject : MonoBehaviour, IPointerDownHandler, IDragHandler, IEndDragHandler
 {
     private Vector3 offset;
     private Camera cam;
     private Rigidbody rb;
+    private bool isDragging;
 
-    // 🔁 This is the important property needed for DeleteOnTrigger.cs
-    public bool WasReleasedByPlayer { get; private set; }
+    [HideInInspector]
+    public bool WasReleasedByPlayer = false;
+
+    private bool blockedByHandle = false;
 
     void Awake()
     {
@@ -16,30 +20,40 @@ public class DraggableObject : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    void OnMouseDown()
+    public void OnPointerDown(PointerEventData eventData)
     {
-        WasReleasedByPlayer = false;
+        WasReleasedByPlayer = false; // 🧼 Reset every pickup
+        if (eventData.pointerEnter != null && eventData.pointerEnter.CompareTag("RotateHandle"))
+        {
+            blockedByHandle = true;
+            return;
+        }
+
         offset = transform.position - GetMouseWorldPosition();
         rb.isKinematic = true;
+        isDragging = true;
+        blockedByHandle = false;
     }
 
-    void OnMouseDrag()
+    public void OnDrag(PointerEventData eventData)
     {
-        Vector3 target = GetMouseWorldPosition() + offset;
-        target.z = 0f;
-        transform.position = target;
+        if (!isDragging || blockedByHandle) return;
+        Vector3 newPos = GetMouseWorldPosition() + offset;
+        transform.position = new Vector3(newPos.x, newPos.y, 0f);
     }
 
-    void OnMouseUp()
+    public void OnEndDrag(PointerEventData eventData)
     {
-        WasReleasedByPlayer = true;
+        if (!isDragging || blockedByHandle) return;
         rb.isKinematic = false;
+        isDragging = false;
+        WasReleasedByPlayer = true; // ✅ Mark released
     }
 
     private Vector3 GetMouseWorldPosition()
     {
-        Vector3 screen = Input.mousePosition;
-        screen.z = Mathf.Abs(cam.transform.position.z);
-        return cam.ScreenToWorldPoint(screen);
+        Vector3 screenPos = Input.mousePosition;
+        screenPos.z = Mathf.Abs(cam.transform.position.z);
+        return cam.ScreenToWorldPoint(screenPos);
     }
 }

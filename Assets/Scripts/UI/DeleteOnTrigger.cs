@@ -1,21 +1,51 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class DeleteOnTrigger : MonoBehaviour
 {
-    public float velocityThreshold = 0.2f;
+    private readonly HashSet<GameObject> insideObjects = new();
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.CompareTag("Toy")) return;
+        insideObjects.Add(other.gameObject);
+    }
 
-        DraggableObject draggable = other.GetComponent<DraggableObject>();
-        Rigidbody rb = other.attachedRigidbody;
+    private void OnTriggerExit(Collider other)
+    {
+        insideObjects.Remove(other.gameObject);
 
-        if (draggable != null && rb != null)
+        // Reset flag on exit
+        if (other.TryGetComponent<FlingableBall>(out var flingable))
         {
-            if (draggable.WasReleasedByPlayer && rb.linearVelocity.magnitude <= velocityThreshold)
+            flingable.wasReleasedByPlayer = false;
+        }
+        else if (other.TryGetComponent<DraggableObject>(out var draggable))
+        {
+            draggable.WasReleasedByPlayer = false;
+        }
+    }
+
+    private void Update()
+    {
+        foreach (var obj in insideObjects)
+        {
+            if (obj == null) continue;
+
+            if (obj.TryGetComponent<FlingableBall>(out var flingable))
             {
-                Destroy(other.gameObject);
+                if (flingable.wasReleasedByPlayer)
+                {
+                    Destroy(obj);
+                    break; // Modify collection, exit loop
+                }
+            }
+            else if (obj.TryGetComponent<DraggableObject>(out var draggable))
+            {
+                if (draggable.WasReleasedByPlayer)
+                {
+                    Destroy(obj);
+                    break;
+                }
             }
         }
     }

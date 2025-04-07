@@ -16,8 +16,8 @@ public class FlingableBall : MonoBehaviour
     private Rigidbody rb;
     private bool isDragging;
     private Vector3 dragOffset;
-    private Queue<Vector3> posSamples = new();
-    private Queue<float> timeSamples = new();
+    private readonly Queue<Vector3> posSamples = new();
+    private readonly Queue<float> timeSamples = new();
 
     void Awake()
     {

@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 3
   tags:
   - Toy
+  - LeftHandle
+  - RightHandle
+  - RotateHandle
   layers:
   - Default
   - TransparentFX

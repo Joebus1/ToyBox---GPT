@@ -3,11 +3,15 @@
   "WorkspaceRootPath": "E:\\Unity Projects\\ToyBox---GPT\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{540199BD-2A47-7EB2-6DA8-7078DD35C198}|Assembly-CSharp.csproj|e:\\unity projects\\toybox---gpt\\assets\\scripts\\ui\\toyboxitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{540199BD-2A47-7EB2-6DA8-7078DD35C198}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\toyboxitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{540199BD-2A47-7EB2-6DA8-7078DD35C198}|Assembly-CSharp.csproj|e:\\unity projects\\toybox---gpt\\assets\\scripts\\toys\\draggableobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{540199BD-2A47-7EB2-6DA8-7078DD35C198}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\toys\\draggableobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{540199BD-2A47-7EB2-6DA8-7078DD35C198}|Assembly-CSharp.csproj|E:\\Unity Projects\\ToyBox---GPT\\assets\\scripts\\ui\\deleteontrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{540199BD-2A47-7EB2-6DA8-7078DD35C198}|Assembly-CSharp.csproj|e:\\unity projects\\toybox---gpt\\assets\\scripts\\ui\\deleteontrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{540199BD-2A47-7EB2-6DA8-7078DD35C198}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\deleteontrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -18,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,27 +30,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DeleteOnTrigger.cs",
-              "DocumentMoniker": "E:\\Unity Projects\\ToyBox---GPT\\Assets\\Scripts\\UI\\DeleteOnTrigger.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\DeleteOnTrigger.cs",
-              "ToolTip": "E:\\Unity Projects\\ToyBox---GPT\\Assets\\Scripts\\UI\\DeleteOnTrigger.cs",
-              "RelativeToolTip": "Assets\\Scripts\\UI\\DeleteOnTrigger.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABiAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "ToyBoxItem.cs",
+              "DocumentMoniker": "E:\\Unity Projects\\ToyBox---GPT\\Assets\\Scripts\\UI\\ToyBoxItem.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\ToyBoxItem.cs",
+              "ToolTip": "E:\\Unity Projects\\ToyBox---GPT\\Assets\\Scripts\\UI\\ToyBoxItem.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI\\ToyBoxItem.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAAAswEoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-06T20:03:14.953Z"
+              "WhenOpened": "2025-04-07T03:59:41.253Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "DraggableObject.cs",
               "DocumentMoniker": "E:\\Unity Projects\\ToyBox---GPT\\Assets\\Scripts\\Toys\\DraggableObject.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Toys\\DraggableObject.cs",
               "ToolTip": "E:\\Unity Projects\\ToyBox---GPT\\Assets\\Scripts\\Toys\\DraggableObject.cs",
               "RelativeToolTip": "Assets\\Scripts\\Toys\\DraggableObject.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAYwC0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABoAAAAAAAAAAAAkwDsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-06T20:02:48.166Z",
+              "WhenOpened": "2025-04-07T03:58:40.564Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DeleteOnTrigger.cs",
+              "DocumentMoniker": "E:\\Unity Projects\\ToyBox---GPT\\Assets\\Scripts\\UI\\DeleteOnTrigger.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\DeleteOnTrigger.cs",
+              "ToolTip": "E:\\Unity Projects\\ToyBox---GPT\\Assets\\Scripts\\UI\\DeleteOnTrigger.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI\\DeleteOnTrigger.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAA7wBIAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T03:51:51.789Z",
               "EditorCaption": ""
             }
           ]
