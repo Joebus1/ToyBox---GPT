@@ -13,9 +13,8 @@ GameObject:
   - component: {fileID: 8684585208068419277}
   - component: {fileID: -5416178133516043166}
   - component: {fileID: -744476435862280063}
+  - component: {fileID: -163847530751819010}
   - component: {fileID: 8645868931374670661}
-  - component: {fileID: -6553964768361294394}
-  - component: {fileID: -4734489032862050612}
   m_Layer: 0
   m_Name: Football
   m_TagString: Toy
@@ -139,6 +138,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 8
   m_CollisionDetection: 2
+--- !u!114 &-163847530751819010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3978156976444542998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80e9198ff52d1004cb0f84d26422a87e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flingMultiplier: 1.5
+  sampleCount: 5
+  WasReleasedByPlayer: 0
 --- !u!114 &8645868931374670661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,30 +166,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   properties: {fileID: 11400000, guid: f3c00d88fb3226543b0ca9b26056c602, type: 2}
---- !u!114 &-6553964768361294394
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3978156976444542998}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ab743c6fd6145649913981842c1610b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flingMultiplier: 1.5
-  sampleCount: 5
-  wasReleasedByPlayer: 0
---- !u!114 &-4734489032862050612
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3978156976444542998}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae1ec148003f09843a7e0f459285f52c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

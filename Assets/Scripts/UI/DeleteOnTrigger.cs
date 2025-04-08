@@ -4,6 +4,7 @@ using System.Collections.Generic;
 public class DeleteOnTrigger : MonoBehaviour
 {
     private readonly HashSet<GameObject> insideObjects = new();
+    public float velocityThreshold = 0.2f; // Prevent fling deletion
 
     private void OnTriggerEnter(Collider other)
     {
@@ -15,13 +16,9 @@ public class DeleteOnTrigger : MonoBehaviour
         insideObjects.Remove(other.gameObject);
 
         // Reset flag on exit
-        if (other.TryGetComponent<FlingableBall>(out var flingable))
+        if (other.TryGetComponent<ToyDraggable>(out var combo))
         {
-            flingable.wasReleasedByPlayer = false;
-        }
-        else if (other.TryGetComponent<DraggableObject>(out var draggable))
-        {
-            draggable.WasReleasedByPlayer = false;
+            combo.wasReleasedByPlayer = false;
         }
     }
 
@@ -31,20 +28,18 @@ public class DeleteOnTrigger : MonoBehaviour
         {
             if (obj == null) continue;
 
-            if (obj.TryGetComponent<FlingableBall>(out var flingable))
+            Rigidbody rb = obj.GetComponent<Rigidbody>();
+            if (!rb) continue;
+
+            float velocity = rb.linearVelocity.magnitude;
+            if (velocity > velocityThreshold) continue;
+
+            if (obj.TryGetComponent<ToyDraggable>(out var combo))
             {
-                if (flingable.wasReleasedByPlayer)
+                if (combo.wasReleasedByPlayer)
                 {
                     Destroy(obj);
-                    break; // Modify collection, exit loop
-                }
-            }
-            else if (obj.TryGetComponent<DraggableObject>(out var draggable))
-            {
-                if (draggable.WasReleasedByPlayer)
-                {
-                    Destroy(obj);
-                    break;
+                    break; // Safe to exit after collection modification
                 }
             }
         }

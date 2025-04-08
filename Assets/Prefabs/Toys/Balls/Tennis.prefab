@@ -13,9 +13,8 @@ GameObject:
   - component: {fileID: 5702755247184418347}
   - component: {fileID: -3578332900461670353}
   - component: {fileID: -1101092780372290587}
+  - component: {fileID: -5119464179643705088}
   - component: {fileID: -5520851928993689482}
-  - component: {fileID: -4288511310699857678}
-  - component: {fileID: -1418605983246635376}
   m_Layer: 0
   m_Name: Tennis
   m_TagString: Toy
@@ -139,6 +138,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 8
   m_CollisionDetection: 2
+--- !u!114 &-5119464179643705088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4350874406377604858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80e9198ff52d1004cb0f84d26422a87e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flingMultiplier: 1.5
+  sampleCount: 5
+  WasReleasedByPlayer: 0
 --- !u!114 &-5520851928993689482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,30 +166,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   properties: {fileID: 11400000, guid: dd2dbcdc46b09cc4083984304f022cb7, type: 2}
---- !u!114 &-4288511310699857678
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4350874406377604858}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ab743c6fd6145649913981842c1610b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flingMultiplier: 1.5
-  sampleCount: 5
-  wasReleasedByPlayer: 0
---- !u!114 &-1418605983246635376
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4350874406377604858}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae1ec148003f09843a7e0f459285f52c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
