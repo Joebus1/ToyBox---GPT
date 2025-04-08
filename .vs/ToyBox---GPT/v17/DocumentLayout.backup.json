@@ -3,24 +3,8 @@
   "WorkspaceRootPath": "E:\\Unity Projects\\ToyBox---GPT\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{540199BD-2A47-7EB2-6DA8-7078DD35C198}|Assembly-CSharp.csproj|E:\\Unity Projects\\ToyBox---GPT\\assets\\scripts\\toys\\draggableandflingable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{540199BD-2A47-7EB2-6DA8-7078DD35C198}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\toys\\draggableandflingable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{540199BD-2A47-7EB2-6DA8-7078DD35C198}|Assembly-CSharp.csproj|e:\\unity projects\\toybox---gpt\\assets\\scripts\\data\\toyobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{540199BD-2A47-7EB2-6DA8-7078DD35C198}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\data\\toyobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{540199BD-2A47-7EB2-6DA8-7078DD35C198}|Assembly-CSharp.csproj|E:\\Unity Projects\\ToyBox---GPT\\assets\\scripts\\toys\\draggableobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{540199BD-2A47-7EB2-6DA8-7078DD35C198}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\toys\\draggableobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{540199BD-2A47-7EB2-6DA8-7078DD35C198}|Assembly-CSharp.csproj|E:\\Unity Projects\\ToyBox---GPT\\assets\\scripts\\ui\\deleteontrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{540199BD-2A47-7EB2-6DA8-7078DD35C198}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\deleteontrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{540199BD-2A47-7EB2-6DA8-7078DD35C198}|Assembly-CSharp.csproj|E:\\Unity Projects\\ToyBox---GPT\\assets\\scripts\\toys\\flingableball.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{540199BD-2A47-7EB2-6DA8-7078DD35C198}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\toys\\flingableball.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{02C962F5-21FA-2E39-8853-7082886CDA41}|Assembly-CSharp-Editor.csproj|E:\\Unity Projects\\ToyBox---GPT\\assets\\scripts\\editor\\toysetuptooleditor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{02C962F5-21FA-2E39-8853-7082886CDA41}|Assembly-CSharp-Editor.csproj|solutionrelative:assets\\scripts\\editor\\toysetuptooleditor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,65 +22,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ToyObject.cs",
-              "DocumentMoniker": "E:\\Unity Projects\\ToyBox---GPT\\Assets\\Scripts\\Data\\ToyObject.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Data\\ToyObject.cs",
-              "ToolTip": "E:\\Unity Projects\\ToyBox---GPT\\Assets\\Scripts\\Data\\ToyObject.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Data\\ToyObject.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T02:45:46.182Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "DraggableAndFlingable.cs",
-              "DocumentMoniker": "E:\\Unity Projects\\ToyBox---GPT\\Assets\\Scripts\\Toys\\DraggableAndFlingable.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Toys\\DraggableAndFlingable.cs",
-              "ToolTip": "E:\\Unity Projects\\ToyBox---GPT\\Assets\\Scripts\\Toys\\DraggableAndFlingable.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Toys\\DraggableAndFlingable.cs",
-              "ViewState": "AgIAADgAAAAAAAAAAAAwwCEAAAAeAAAAAAAAAA==",
+              "Title": "ToySetupToolEditor.cs",
+              "DocumentMoniker": "E:\\Unity Projects\\ToyBox---GPT\\Assets\\Scripts\\Editor\\ToySetupToolEditor.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Editor\\ToySetupToolEditor.cs",
+              "ToolTip": "E:\\Unity Projects\\ToyBox---GPT\\Assets\\Scripts\\Editor\\ToySetupToolEditor.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Editor\\ToySetupToolEditor.cs",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAqwIAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T02:38:03.333Z",
+              "WhenOpened": "2025-04-08T04:44:20.493Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "FlingableBall.cs",
-              "DocumentMoniker": "E:\\Unity Projects\\ToyBox---GPT\\Assets\\Scripts\\Toys\\FlingableBall.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Toys\\FlingableBall.cs",
-              "ToolTip": "E:\\Unity Projects\\ToyBox---GPT\\Assets\\Scripts\\Toys\\FlingableBall.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Toys\\FlingableBall.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAADwvxgAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-07T04:15:33.935Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DraggableObject.cs",
-              "DocumentMoniker": "E:\\Unity Projects\\ToyBox---GPT\\Assets\\Scripts\\Toys\\DraggableObject.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Toys\\DraggableObject.cs",
-              "ToolTip": "E:\\Unity Projects\\ToyBox---GPT\\Assets\\Scripts\\Toys\\DraggableObject.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Toys\\DraggableObject.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAQwDsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-07T03:58:40.564Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "DeleteOnTrigger.cs",
-              "DocumentMoniker": "E:\\Unity Projects\\ToyBox---GPT\\Assets\\Scripts\\UI\\DeleteOnTrigger.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\DeleteOnTrigger.cs",
-              "ToolTip": "E:\\Unity Projects\\ToyBox---GPT\\Assets\\Scripts\\UI\\DeleteOnTrigger.cs",
-              "RelativeToolTip": "Assets\\Scripts\\UI\\DeleteOnTrigger.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAADwvyMAAAA9AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-07T03:51:51.789Z"
             }
           ]
         }
